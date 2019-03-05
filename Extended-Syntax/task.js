@@ -1,4 +1,4 @@
-
+"use strict"
 
 function calculateQuadraticEquation(){
     let a = +window.a.value;
@@ -11,9 +11,28 @@ function calculateQuadraticEquation(){
 }
 
 function getResult(a,b,c){
-    // код для задачи №1 писать здесь
-    //return x;
-}
+   let discrim = b ** 2 - 4 * a * c;
+
+   if (discrim < 0) {
+     console.log("Нет корней");
+   } else if (discrim == 0) {
+     let x = (-b) / (2 * a);
+     console.log("Один корень");
+     console.log(x);
+     return x;
+   } else if (discrim > 0) {
+     let x = [];
+     x[0] = ((-b) + Math.sqrt(discrim)) / (2 * a);
+     x[1] = ((-b) - Math.sqrt(discrim)) / (2 * a);
+     console.log("Два корня");
+     console.log(x);
+     return x;
+   }
+  
+  }
+  getResult(2, 4 , -3);
+
+
 
 function calculateDrinkTask(){
     let name = window.personName.value;
